@@ -1,0 +1,39 @@
+digraph "classes" {
+  #dot -Tpng -Gsize=9,15\! -Gdpi=100 full_marker.dot -o full_marker.png && kitty icat full_marker.png
+  rankdir=BT
+  charset="utf-8"
+  Usuario [
+    color="black",
+    fontcolor="black",
+    label=<{Usuario|
+~nombre : String
+<br ALIGN="LEFT"/>
+~estaActivo : boolean
+<br ALIGN="LEFT"/>
+~email : String
+<br ALIGN="LEFT"/>
+|
+~Usuario(String nombre, String email): Constructor
+<br ALIGN="LEFT"/>
+~Usuario(String email):Constructor
+<br ALIGN="LEFT"/>}>,
+    shape="record",
+    style="solid"
+  ];
+
+  Maestro [
+    color="black",
+    fontcolor="black",
+    label=<{Maestro|
+~materias : ArrayList&lt;String&gt;
+<br ALIGN="LEFT"/>
+|
+~Maestro(ArrayList&lt;String&gt; materias): Constructor
+<br ALIGN="LEFT"/>}>,
+    shape="record",
+    style="solid"
+  ];
+
+  Maestro -> Usuario [arrowhead="empty"]
+}
+

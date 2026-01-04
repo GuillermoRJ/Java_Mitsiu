@@ -1,0 +1,13 @@
+Motor
+Acelerar solo puede recibir una cantidad de gasolina positiva de lo contrario se lanza la excepción "No se puede quitar gasolina del motor"
+La función acelerar se define como velocidad = gasolina * caballosFuerza;
+
+Carro
+El carro solo puede arrancar si tiene al menos 0.2 litos de gasolina de otra manera lanza excepción "Para arrancar se necesita gasolina"
+El carro solo puede acelerar si tiene minimo esa cantidad de gasolina de otra manera decrementa la gasolina a 0 y lanza excepción "Sin gasolina"
+Acelerar solo puede recibir una cantidad de gasolina positiva de lo contrario lanza al excepción "No se puede regresar gasolina"
+
+Vocho
+El constructor asigna la velocidad máxima en 110 km/h
+
+

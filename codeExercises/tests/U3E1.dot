@@ -1,0 +1,58 @@
+digraph "classes" {
+  #dot -Tpng -Gsize=9,15\! -Gdpi=100 full_marker.dot -o full_marker.png && kitty icat full_marker.png
+  rankdir=TB
+  charset="utf-8"
+
+  Vocho [
+    color="black",
+    fontcolor="black",
+    label=<{Vocho|
++ velocidadMax : float
+<br ALIGN="LEFT"/>
+|
+~ Vocho() : Constructor
+<br ALIGN="LEFT"/>}>,
+    shape="record",
+    style="solid"
+  ];
+
+  Carro [
+    color="black",
+    fontcolor="black",
+    label=<{Carro|
++ velocidad : float
+<br ALIGN="LEFT"/>
+~ litrosGasolina : float
+<br ALIGN="LEFT"/>
+- motor: Motor
+<br ALIGN="LEFT"/>
+|
+# arrancar() throws Exception: void
+<br ALIGN="LEFT"/>
+# acelerar(float gasolina) throws Exception: float velocidad
+<br ALIGN="LEFT"/>}>,
+    shape="record",
+    style="solid"
+  ];
+
+  Motor [
+    color="black",
+    fontcolor="black",
+    label=<{Motor|
++ caballosFuerza : int
+<br ALIGN="LEFT"/>
+|
+~ Motor(int caballosFuerza): Constructor
+<br ALIGN="LEFT"/>
+~ acelerar(float gasolina) throws Exception: float velocidad
+<br ALIGN="LEFT"/>}>,
+    shape="record",
+    style="solid"
+  ];
+
+  Vocho -> Carro [arrowhead="empty"]
+  Carro -> Motor [dir=back arrowtail=diamond]
+
+  {rank = same; Vocho; Motor;}
+}
+
